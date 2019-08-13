@@ -1,0 +1,55 @@
+.map-section {
+	padding: 2.5em 0 1.5em 0;
+	iframe{
+		@include flexbox();
+		/*margin: 0 auto;*/
+		width: 100%;
+	}
+}
+
+.button-send {
+	padding: 6px 30px;
+	border: 2px solid $black-pearl;
+	background-color: $black-pearl;
+	border-radius: 5px;
+	&:hover {
+		background-color: $white;
+		color: $black-pearl;
+	}
+}
+
+@media (max-width: $xs) {
+	.contact-section {
+		.input-style,
+		.input-style2 {
+			margin-bottom: 1em;
+		}
+		form {
+			padding: 0 0 1em 0;
+		}
+	}
+}
+
+@media all and (max-width: 990px) and (min-width: 576px) {
+	.contact-section {
+		.input-style,
+		.input-style2 {
+			margin-bottom: 1em;
+		}
+		form {
+			padding: 1em 0 2.5em 0;
+		}
+	}
+}
+
+@media all and (min-width: $md) {
+	.contact-section {
+		.input-style,
+		.input-style2 {
+			margin-bottom: 1em;
+		}
+		form {
+			padding: 1em 10em 2.5em;
+		}
+	}
+}

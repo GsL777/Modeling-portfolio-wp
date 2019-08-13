@@ -1,0 +1,40 @@
+// project variables
+@import 'variables';
+
+// global styles
+@import 'global';
+
+// shared components
+@import 'shared/header';
+@import 'shared/navbar';
+@import 'shared/footer';
+
+// page specific styles
+@import 'pages/index';
+@import 'pages/about';
+@import 'pages/portfolio';
+@import 'pages/contact';
+
+// other styles
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font: sans-serif;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	/*font-family: $body-font;*/
+	&.no-scroll{
+		overflow-y: hidden;
+	}
+}
+
+p {
+	font-family: 'oswald', sans-serif;
+	/*font-family: "Vidaloka", serif;*/
+	/*font-weight: 500;*/
+}

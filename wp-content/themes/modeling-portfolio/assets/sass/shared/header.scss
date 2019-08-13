@@ -1,0 +1,242 @@
+.header-section {
+	.header-slider {
+		.previous {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 105px;
+			height: 86px;
+			margin: 3px 0 0 0;
+			@include flexbox();
+		    @extend %align-items-center;
+		    -ms-flex-pack: center;
+		    @extend %justify-content-center;
+		    color: $white; 
+		    text-align: center;
+		    background: $black-pearl;
+		    i {
+				border: 0 solid $white;
+				border-width: 0 5px 5px 0;
+				display: inline-block;
+				padding: 3px;
+				margin: 8px 0 0 10px;
+				width: 30px;
+				height: 30px;
+			}
+			.left {
+				@include transform( rotate(135deg) );/*transform: rotate(135deg)*/
+			}
+		}
+		.next {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 105px;
+			height: 86px;
+			margin: 3px 0 0 105px;
+			border: 0 solid $black;
+			@include flexbox();
+			@extend %align-items-center;
+			-ms-flex-pack: center;
+			@extend %justify-content-center;
+			color: $white;
+			text-align: center;
+			background-color: $white;
+			i {
+				border: 1px solid $black-pearl;
+				border-width: 0 5px 5px 0;
+				display: inline-block;
+				padding: 3px;
+				margin: 8px 10px 0 0;
+				width: 30px;
+				height: 30px;
+			}
+			.right {
+				@include transform( rotate(-45deg) );/*transform: rotate(-45deg)*/
+			}
+		}
+		.image-section {
+			height: 100vh;
+			/*max-height: 72vh;*/
+			img {
+				position: relative;
+				/*height: 1000px;*/
+				height: 100%;
+				background-position: top center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.social-media {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	z-index: 2;
+	@include transform( translateY(-50%) );/*transform: translateY(-50%);*/
+	a {
+		display: block;
+		text-align: center;
+		padding: 10px 15px;
+		color: $white;
+		font-size: 15px;
+		margin: 15px;
+		border-radius: 50%;
+		transition: all .3s ease;
+		&:hover {
+			background-color: $black-pearl;
+		}
+	}
+	.facebook {
+		background-color: $facebook-blue; 
+		color: $white;
+	}
+	.twitter {
+		background-color: $twitter-light-blue;
+		color: $white;
+	}
+	.linkedin {
+		background-color: $linkedin;
+		color: $white;
+	}	
+}
+
+@media (max-width: 575px) {
+	.header-section {
+		.header-slider {
+			.image-section {
+				/*max-height: 40vh;*/
+				height: 40vh;
+				img {
+					/*max-height: 100%;*/
+					height: 100%;
+				}
+			}
+			.previous {
+				width: 70px;
+				height: 60px;
+			}
+			.next {
+				width: 70px;
+				height: 60px;
+				margin: 3px 0 0 70px;
+			}
+		}
+	}
+	.table {
+		display: table;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		.table-cell {
+			display: table-cell;
+			width: 135%;
+			height: 100%;
+			position: absolute;
+			top: 100%;
+			margin-top: -41px;
+			.site-title {
+				font-size: 2.5rem;
+				color: rgba(255, 255, 255, .7);
+			}
+		}
+	}
+	.social-media {
+		top: 27%;
+	}
+	.hide {
+		padding-left: .5em;
+	}
+}
+
+@media only screen and (min-width: 576px) and (max-width: $md) {/*$md - 900px*/
+	.header-section {
+		.image-section {
+			max-height: 70vh;
+			img {
+				max-height: 100%;
+			}
+		}
+	}
+	.table {
+		display: table;
+		height: 100%;
+		text-align: center;
+		.table-cell {
+			display: table-cell;
+			width: 135%;
+			height: 100%;
+			vertical-align: middle;
+			background-position: center;
+			background-repeat: no-repeat;
+			/*position: absolute; TAKE OFF POSITION: ABSOLUTE IF GALLERY GLITCHES*/
+			position: absolute;
+			top: 95%;
+			margin-top: -50px;
+			.site-title{
+				font-size: 4.5rem;
+				color: rgba(255, 255, 255, .7);
+			}
+		}
+	}
+	.social-media {
+		top: 40%;
+	}
+}
+
+@media all and (min-width: 901px) and (max-width: 1024px){
+	.image-section {
+		/*max-height: 100vh;*/
+		max-height: 72vh;
+	}
+	.table {
+		display: table;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		.table-cell {
+			display: table-cell;
+			width: 100%;
+			height: 100%;
+			vertical-align: middle;
+			background-position: center;
+			background-repeat: no-repeat;
+			/*position: absolute; TAKE OFF POSITION: ABSOLUTE IF GALLERY GLITCHES*/
+			position: absolute;
+			top: 95%;
+			margin-top: -50px;
+			.site-title{
+				font-size: 4.5rem;
+				color: rgba(255, 255, 255, .7);
+			}
+		}
+	}
+}
+
+@media (min-width: 1025px) {
+	.table {
+		display: table;
+		height: 100%;
+		text-align: center;
+		.table-cell {
+			display: table-cell;
+			width: 100%;
+			height: 100%;
+			vertical-align: middle;
+			background-position: center;
+			background-repeat: no-repeat;
+			/*position: absolute; TAKE OFF POSITION: ABSOLUTE IF GALLERY GLITCHES*/
+			position: absolute;
+			top: 95%;
+			margin-top: -50px;
+			.site-title{
+				font-size: 4.5rem;
+				color: rgba(255, 255, 255, .7);
+			}
+		}
+	}
+}

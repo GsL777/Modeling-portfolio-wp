@@ -1,0 +1,124 @@
+//Colors
+
+$white: #FFF; /* White */
+$white2: rgba(0, 0, 0, .59);
+$white3: rgba(0, 0, 0, .5);
+$charcoal: #36454F; /* Charcoal */
+
+$bright-red: #F24432; /*Bright red*/ /*about.html*/
+$gray20: #333; /*Dark charcoal*/
+$gray60: #999; /*Gray60*/
+$gray80: #CCC; /* Gray80 */
+
+$kelly-green: #42B32F; /* Kelly Green */ /*portfolio.html*/
+$black-pearl: #081625; /* Black Pearl */
+
+$dim-gray: #737373; /* Dim Gray */
+$light-gray-red: #BBB; /* Light Gray Red */
+$black: #000; /* Black */
+
+$facebook-blue: #3B5998; /* Facebook Blue */ /*header.html*/
+$twitter-light-blue: #55ACEE; /* Twitter Light blue */
+$linkedin: #007BB5; /* Linkedin Cerulean */
+
+//Fonts
+
+
+//Variables
+
+
+//Placeholder
+@mixin flexbox() {
+	display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+}
+
+@mixin flex() {
+	-webkit-box-flex: 1;
+		-webkit-flex: 1;
+			-ms-flex: 1;
+				flex: 1;
+}
+
+%flex-flow-row-nowrap {
+			flex-flow: row nowrap;
+	-webkit-flex-flow: row nowrap;
+		-ms-flex-flow: row nowrap;
+}
+
+%flex-flow-column-nowrap {
+-webkit-flex-flow: column nowrap;
+	-ms-flex-flow: column nowrap;
+		flex-flow: column nowrap;	
+}
+
+%box-align-end {
+/* Align children to the horizontal center of this box */
+		-moz-box-align: end;
+	 -webkit-box-align: end;
+}
+
+%box-align-center {
+	-moz-box-align: center;
+ -webkit-box-align: center;
+}
+
+%align-items-end {
+	-webkit-align-items: flex-end;
+			  -ms-flex-align: end;
+			align-items: flex-end;
+}
+
+%align-items-center {
+	 -webkit-align-items: center;
+		  -ms-flex-align: center;
+			 align-items: center;
+}
+
+%pack-center {
+/* Pack children to the bottom of this box */
+		-moz-box-pack: center;
+	 -webkit-box-pack: center;
+		-ms-flex-pack: center;
+}
+
+%justify-content-center {
+	-webkit-justify-content: center;
+			justify-content: center;
+}
+
+@mixin transform( $val ) {
+	-webkit-transform: $val;
+	-moz-transform: $val;
+	-ms-transform: $val;
+	-o-transform: $val;
+	transform: $val;
+}
+
+@mixin animate ($attr, $time){
+	-webkit-transition: $attr $time ease-in-out;
+	-moz-transition: $attr $time ease-in-out;
+	-ms-transition: $attr $time ease-in-out;
+	-o-transition: $attr $time ease-in-out;
+	transition: $attr $time ease-in-out;
+}
+
+@mixin animate2 ($attr2, $time2){
+	-webkit-transition: $attr2 $time2 linear;
+	-moz-transition: $attr2 $time2 linear;
+	-ms-transition: $attr2 $time2 linear;
+	-o-transition: $attr2 $time2 linear;
+	transition: $attr2 $time2 linear;
+}
+
+//Media Queries
+$xs: 575px; /*Extra small devices (portrait phones, less than 576px)*/
+
+$sm: 767px; /* Small devices (landscape phones, less than 768px)*/
+
+$md: 991px; /* Medium devices (tablets, less than 992px)*/
+
+$lg: 1199px; /* Large devices (desktops, less than 1200px)*/
