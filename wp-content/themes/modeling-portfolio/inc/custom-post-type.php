@@ -1,7 +1,7 @@
 <?php 
 
 /*
-@package modeling-portfolio-theme
+	@package modeling-portfolio-theme
 
 	=============================
 		THEME CUSTOM POST TYPES
@@ -9,12 +9,13 @@
 */
 
 //Contact Form Options
+//FILES INCLUDE modeling-portfolio.js, function.php(to add ajax.php), contact-form.php, ajax.php, theme-support.php, shortcodes.php, contact.scss
 $contact =  get_option( 'activate_contact' );//function-admin.php 
-if(@$contact == 1) {//in order to activate Contact appearance on WordPress dashboard. To initialize function portfolio_contact_custom_post_type that is generating cutom post types
+if(@$contact == 1) {//in order to activate Contact appearance on WordPress dashboard. To initialize function modeling_contact_custom_post_type that is generating cutom post types
 		add_action('init', 'modeling_contact_custom_post_type');
 
 		//add_filter( 'manage_yourcustomposttype_columns' );
-		add_filter( 'manage_modeling-contact_posts_columns', 'modeling_set_contact_columns' );//update a MESSAGE option prebuilt information in WordPress dashboard. yourcustomposttype - modeling-contact (write the same as in custom-post-type.php register_post_type( 'portfolio-contact', $args );). Changes just the middle ..._yourcustomposttype_...
+		add_filter( 'manage_modeling-contact_posts_columns', 'modeling_set_contact_columns' );//update a MESSAGE option prebuilt information in WordPress dashboard. yourcustomposttype - modeling-contact (write the same as in custom-post-type.php register_post_type( 'modeling-contact', $args );). Changes just the middle ..._yourcustomposttype_...
 		//After that need to create a function
 
 		add_action( 'manage_modeling-contact_posts_custom_column', 'modeling_contact_custom_column', 10, 2 );//making to print a Message and email info after function modeling_set_contact_columns( $columns ) is written and need to write a new function modeling_contact_custom_column below.
@@ -27,7 +28,7 @@ if(@$contact == 1) {//in order to activate Contact appearance on WordPress dashb
 		//trigering function modeling_save_contact_email_data( $post_id ).
 }
 
-/*CONTACT Custom Post Type*/
+/* CONTACT Custom Post Type */
 function modeling_contact_custom_post_type(){//modeling_contact_custom_post_type newly created function
 	$labels = array(
 		'name'				=>	'Messages',
@@ -77,9 +78,8 @@ function modeling_contact_custom_column($column, $post_id){ //Contact Form Optio
 	}
 }//function to print custom info in WP dashboard -> Messages
 
-/*CONTACT META BOXES*/
+/* CONTACT META BOXES */
 //metabox in WordPress dashboard MESSAGE option
-
 function modeling_contact_add_meta_box(){
 	add_meta_box('contact_email', 'User Email', 'modeling_contact_email_callback', 'modeling-contact', 'side');//Fourth parameter - post type id 'modeling-contact' of modeling_contact_custom_post_type function.
 	//Fifth parameter - specify the position. 'normal' - puts it on the bottom of the screen. 'side' - puts it on a side of the screen.
@@ -122,4 +122,4 @@ function modeling_save_contact_email_data( $post_id ){
 	$my_data = sanitize_text_field($_POST['modeling_contact_email_field']);//sanitize-text_field - makes sure that nothing bad will not be saved in a database.
 	update_post_meta($post_id, '_contact_email_value_key', $my_data);//First value - post_id taken from modeling_contact_email_callback function. Second value - meta key ($value = get_post_meta($post->ID, '_contact_email_value_key', true);)
 
-}//after that add a variable to function portfolio_contact_custom_column and echo.
+}//after that add a variable to function modeling_contact_custom_column and echo.

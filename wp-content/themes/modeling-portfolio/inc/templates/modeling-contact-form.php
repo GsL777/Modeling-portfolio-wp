@@ -1,7 +1,10 @@
 <h1>Modeling Portfolio Contact Form</h1>
 <?php settings_errors(); //function that will print an error?>
 
-<form method="post" action="options.php" class="modeling-general-form"> 
+<p>Use this <strong>shortcode</strong> to activate the Contact Form inside a Page or Post</p>
+<p><code>[contact_form]</code></p> <!-- shortcode in inc -> shortcodes.php -->
+
+<form method="post" action="options.php" class="modeling-general-form">
 
 	<?php settings_fields( 'modeling-contact-options' ); //Contact Form Options from function modeling_custom_settings register_setting First parameter?>
 	

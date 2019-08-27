@@ -6,12 +6,14 @@
 	==========================================
 		SHORTCODE OPTIONS
 	==========================================
+
 */
 
 //TOOLTIP
 //https://getbootstrap.com/docs/4.0/components/tooltips/
 //code in modeling-portfolio.js and must have a post created
 function modeling_tooltip( $attr, $content = null ){//First parameter - the array that contains the attributes. Second parameter - is the content. Text wrapped around a shortcode. $content = null - default action not to trigger an error if [tooltip][/tooltip] is empty.
+
 
 // PUT TOOLTIP IN WP DASBOARD -> POST
 /*
@@ -67,4 +69,32 @@ function modeling_popover( $attr, $content = null ){//code in modeling-portfolio
 }
 
 add_shortcode( 'popover', 'modeling_popover' );//For function to work need to put $('[data-toggle="popover"]').popover(); to revealPosts function to modeling-portfolio.js
+
+
+//CONTACT FORM SHORTCODE
+//FILES INCLUDE modeling-portfolio.js, function.php(to add ajax.php), contact-form.php, ajax.php, theme-support.php, custom-post-type.php, contact.scss
+function modeling_contact_form( $attr, $content = null ){//First parameter - the array that contains the attributes. Second parameter - is the content. Text wrapped around a shortcode. $content = null - default action not to trigger an error if [contact_form][/contact_form] is empty.
+
+/*
+[contact_form placement="top"]This is the content[/contact_form]
+
+always use lowecase. Do not use _ or - and capital letters inside []
+*/
+
+	//get the attributes
+	$attr = shortcode_atts(
+		array(),//return empty array, because don't have anything
+		$attr,
+		'contact_form'//specify the type of shortcode code that the system have to recognise and in this case it is contact_form. contact_form - a shortcode name.
+	);
+
+	//return HTML
+	ob_start();//ob_start(); - turn on output buffering (ob-stands for output buffering) and if it is turned on it will prevent any outputs sent from the script to be injected or outputted immediately.
+	include 'templates/contact-form.php';
+
+	return ob_get_clean();//files in modeling-contact-form.php, content-contact.php
+}
+
+add_shortcode( 'contact_form', 'modeling_contact_form' ); //First Variable - shortcode name, Second variable - the name of the function shortcode that must be called
+
 ?>

@@ -1,3 +1,10 @@
+.content-area {
+    .site-title {
+        font-size: 4.5rem;
+        color: #36454F;
+    }
+}
+
 /*===================================
 quote-section
 =====================================*/
@@ -41,15 +48,22 @@ gallery-section
     a {
         &:hover,
         &:focus {
-            img {
+            .img-responsive {
                 @include transform( scale(1.5) ); /*transform: scale(1.5);*/
             }
         }
-        img {
+        /*img*/ 
+        .img-responsive{/* For positioning the picture START */
             @include animate( all, 2400ms );/*transition: all 2.4s ease-in-out; variables.scss*/
             height: 320px;
             width: 100%;
-        }
+
+            display: block;
+            overflow: hidden;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }/* For positioning the picture END */
     }
 }
 
@@ -101,9 +115,10 @@ about-section
 =====================================*/
 .about-dressing,
 .about-fashion {
-    img{
+   img{
         display: block;
         width: 100%;
+        height: 100%;
     }
 }
 
@@ -115,7 +130,7 @@ about-section
     }
 }
 
-.about-section {
+/*.about-section {*/
 
     .wrapper {
         @include flexbox();
@@ -137,7 +152,8 @@ about-section
             order: 1; 
         }
     }
-}
+
+/*}*/
 
 .wrapper > * {
     padding: 10px;

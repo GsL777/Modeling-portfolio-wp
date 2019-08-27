@@ -1,4 +1,5 @@
 .footer-section {
+	margin-top: 3em;
 	background-color: $black-pearl;
 	padding: 45px 0 0;
 	font-size: 15px;
@@ -23,6 +24,9 @@
 }
 
 .footer-section {
+	.row {
+		margin: 0;
+	}
 	p {
 		color: rgba(255,255,255,.5);
 	}

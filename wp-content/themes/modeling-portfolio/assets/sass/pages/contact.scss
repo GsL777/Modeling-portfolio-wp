@@ -1,3 +1,6 @@
+/*===================================
+	Contact-section
+=====================================*/
 .map-section {
 	padding: 2.5em 0 1.5em 0;
 	iframe{
@@ -53,3 +56,63 @@
 		}
 	}
 }
+
+
+
+/*Contact form START*/
+
+.modeling-contact-form {
+	padding: 40px 0;
+	max-width: 500px;
+	width: 100%;
+	margin: 0 auto;
+	.form-group {
+		margin-bottom: 30px;
+		position: relative;
+		padding: 0 1em;
+		&:before {
+			position: absolute;
+			display: block;
+			content: '';
+
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			/*background-color: $grey2;*/
+		}
+		.form-control-msg {
+			text-transform: uppercase;
+			font-size: 10px;
+			font-weight: 500;
+		}
+		&.has-error{
+			&:before {
+				background-color: #A94442;
+
+			}
+		}
+	}
+}
+
+.form-row {
+	margin: 0;
+}
+
+.form-control-msg {
+	display: none;
+}
+
+.has-error {
+	.form-control-msg {
+		display: block;
+	}
+	.form-control{
+		border-color: #ff0000;
+	}
+}
+
+.js-show-feedback {
+	display: block;
+}
+/*Contact form END*/

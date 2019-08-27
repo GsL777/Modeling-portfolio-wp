@@ -27,10 +27,11 @@ body {
 body {
 	margin: 0;
 	padding: 0;
-	/*font-family: $body-font;*/
+	/*font-family: $body-font;
 	&.no-scroll{
 		overflow-y: hidden;
-	}
+	}*/
+	overflow-x: hidden;
 }
 
 p {
@@ -38,3 +39,11 @@ p {
 	/*font-family: "Vidaloka", serif;*/
 	/*font-weight: 500;*/
 }
+
+/*
+* {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+}
+*/

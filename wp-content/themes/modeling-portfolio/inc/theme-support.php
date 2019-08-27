@@ -55,18 +55,46 @@ function modeling_register_nav_menu(){
 }//add a walker.php file and require in functions.php
 
 add_action('after_setup_theme', 'modeling_register_nav_menu');//call an action to activate a function.
-
 /*Activate Nav Menu Option END*/
 
 
-/*Initialize global Mobile Detect START*/
-function mobileDetectGlobal(){//CALL THE FUNCTION IN ALL THE CONTENT as example in content-image.php 		global $detect;
+/*Activate Footer navigation menu START*/
+function modeling_theme_setup() {
+	add_theme_support('menus'); //activatíng menu's writing a string 
+
+	//register_nav_menu('primary', 'Primary Header Navigation'); //first value - string $location, second option - string $description
+	register_nav_menu('secondary', 'Footer Navigation');
+}
+add_action('init', 'modeling_theme_setup'); //function to create the menus. Function is executed after the setup theme is triggered. Function will work 'after_setup_theme' or after the initialization 'init'
+/*Activate Footer navigation menu END*/
+
+
+//function for testing CONTACT FORM email START
+//FILES INCLUDE modeling-portfolio.js, function.php(to add ajax.php), contact-form.php, ajax.php, shortcodes.php, custom-post-type.php, contact.scss 
+
+//TURN OFF IF IT IS NOT IN USE
+/*
+function mailtrap($phpmailer) {//code in ajax.php function modeling_save_contact();
+  $phpmailer->isSMTP();
+  $phpmailer->Host = 'smtp.mailtrap.io';
+  $phpmailer->SMTPAuth = true;
+  $phpmailer->Port = 2525;
+  $phpmailer->Username = '5ef4715c46507e';
+  $phpmailer->Password = '4fa836c30aacff';
+}
+
+add_action('phpmailer_init', 'mailtrap');
+//function for testing CONTACT FORM email END
+*/
+
+/* Initialize global Mobile Detect START */
+function mobileDetectGlobal(){//CALL THE FUNCTION IN ALL THE CONTENT as example in content-image.php	global $detect;
 
 	global $detect;
-
 	$detect = new Mobile_Detect;
 }
 
 add_action('after_setup_theme', 'mobileDetectGlobal');//after_setup_theme - WordPress built in action 
+/* Initialize global Mobile Detect END */
 
-/*Initialize global Mobile Detect END*/
+?>
