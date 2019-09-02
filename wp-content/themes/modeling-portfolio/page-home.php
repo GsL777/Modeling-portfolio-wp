@@ -71,6 +71,7 @@ get_header(); ?>
 							while( $blogLoop->have_posts() ): $blogLoop->the_post(); ?>
 
 							<?php 
+
 								if($i==0): $column = 12; 
 									elseif($i > 0 && $i < 2): $column = 6;
 									elseif($i > 1 && $i < 3): $column = 6;
@@ -82,6 +83,7 @@ get_header(); ?>
 									elseif($i > 5 && $i < 7): $column = 12;
 									elseif($i > 6): $column = 6;
 								endif;
+
 							?>
 
 								<div class="col-lg-4 col-md-<?php echo $column; ?> col-sm-12 gallery-item">
@@ -92,8 +94,7 @@ get_header(); ?>
 
 											<?php if( has_post_thumbnail() ): 
 												$urlImg = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
-											endif;
-											// echo $urlImg;
+											endif; // echo $urlImg;
 											?>
 												<div class="img-responsive" style="background-image: url(<?php echo $urlImg; ?>);"></div>
 
@@ -141,9 +142,8 @@ get_header(); ?>
 					if( $blogLoop->have_posts() ):
 
 						while( $blogLoop->have_posts() ): $blogLoop->the_post();
-						get_template_part( 'template-parts/content', 'image' );//template-part - folder where are all the content files. get-template-part function will search a folder template-parts and files with start content- .
-						//get_post_format() - retrieve the_post_format of the current post that is in the post loop.
-
+							get_template_part( 'template-parts/content', 'image' );//template-part - folder where are all the content files. get-template-part function will search a folder template-parts and files with start content- .
+							//get_post_format() - retrieve the_post_format of the current post that is in the post loop.
 						endwhile;
 
 					endif;

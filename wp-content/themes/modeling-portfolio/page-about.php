@@ -31,7 +31,6 @@ get_header(); ?>
 					if( $blogLoop->have_posts() ):
 
 						while( $blogLoop->have_posts() ): $blogLoop->the_post();
-
 							get_template_part( 'template-parts/content', 'about' );//template-part - folder where are all the content files. get-template-part function will search a folder template-parts and files with start content- .
 							//get_post_format() - retrieve the_post_format of the current post that is in the post loop.
 						endwhile;
@@ -66,7 +65,6 @@ get_header(); ?>
 						if( $blogLoop->have_posts() ): 
 
 							$i = 0; //variable for $fontIcon
-
 							while( $blogLoop->have_posts() ): $blogLoop->the_post();
 
 							?>
@@ -105,9 +103,7 @@ get_header(); ?>
 
 
 			<section class="testimonials-section">
-
 				<div id="testimonials-carousel" class="carousel slide" data-ride="carousel">
-
 					<div class="carousel-inner" role="listbox">
 
 					<?php 
@@ -133,7 +129,6 @@ get_header(); ?>
 
 								$count = 0; //variable for fa icons and for bullets
 								$bullets = ''; //variable for bullets
-
 								while( $blogLoop->have_posts() ): $blogLoop->the_post();
 								?>
 
@@ -147,8 +142,8 @@ get_header(); ?>
 								?>
 
 									<div class="carousel-item <?php if($count == 0): echo 'active'; endif; ?>">
-
 										<div class="carousel-caption content col-xs-12">
+
 											<i class="image-content <?php echo $fontIcon; ?>"></i>
 
 											<?php the_title('<h2 class="image-caption col-xs-12"><b>', '</b></h2>'); ?>
