@@ -16,7 +16,7 @@
 	<div class="container">
 		<div class="row about-fashion">
 			<div class="col-md-5">
-				<?php if( has_post_thumbnail() && ($detect->isMobile() || $detect->isTablet() ) ): ?>
+				<?php if( has_post_thumbnail() ): ?>
 					<div class="background-image"><?php the_post_thumbnail('full'); ?></div>
 				<?php endif; ?>
 			</div><!-- .col-md-5 -->

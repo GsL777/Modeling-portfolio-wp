@@ -20,7 +20,7 @@
 					<p><em><?php the_excerpt(); ?></em></p>
 				</article>
 				<aside class="aside aside-2 col-md-6">
-					<?php if( has_post_thumbnail() && ($detect->isMobile() || $detect->isTablet() ) ): ?>
+					<?php if( has_post_thumbnail() ): ?>
 						<div class="background-image"><?php the_post_thumbnail('full'); ?></div>
 					<?php endif; ?>
 				</aside>

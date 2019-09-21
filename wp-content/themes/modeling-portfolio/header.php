@@ -32,7 +32,8 @@
 
 
 	<nav class="nav-section navbar navbar-expand-md flex-direction navbar-dark">
-		<a class="navbar-brand position-md-absolute " href="http://localhost/modeling-portfolio/home/">
+		<!-- <a class="navbar-brand position-md-absolute" href="http://localhost/modeling-portfolio/home/"> -->
+		<a class="navbar-brand position-md-absolute" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 			<img src="http://localhost/Modeling-portfolio/wp-content/themes/modeling-portfolio/assets/img/Logo.png" alt="" />
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,7 +103,6 @@
 							while( $blogLoop->have_posts() ): $blogLoop->the_post(); ?>
 								
 								<div class="image-section carousel-item <?php if($count == 0): echo 'active'; endif; ?>">
-
 									<?php the_post_thumbnail('full'); ?>
 
 									<div class="header-content table">

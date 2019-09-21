@@ -76,6 +76,7 @@ jQuery(document).ready(function($){
         $("img").click(function(){
             var image = $(this).attr("src");
             $(".modal-body").html("<img src='"+image+"' class='wp-post-image modal-img'>");
+            //$(".modal-body").html($(this).find("gallery-img img"));
             $("#imageModal").modal();
         });
     });
