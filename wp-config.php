@@ -79,7 +79,10 @@ $table_prefix  = 'wp_admin';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
+
+define('WP_DEBUG', true); //true - wordpress prints mistakes, errors.
+define('WP_DEBUG_DISPLAY', false); //false - doesn't print errors publicly .
+define('WP_DEBUG_LOG', true); //true - creates log file that only me can access.
 
 /* That's all, stop editing! Happy blogging. */
 

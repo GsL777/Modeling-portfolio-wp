@@ -16,7 +16,7 @@
 		<div class="container">
 			<div class="animation-element slide-left col-lg-12 col-md-12 col-sm-12">
 
-				<?php the_title( '<h2 class="story">', '</h2>'); // escape the url because we are inside the function so we dont whant to print?>
+				<?php the_title( '<h2 class="story">', '</h2>'); ?>
 				<p><em><?php the_content(); ?></em></p>
 
 			</div><!-- .col-lg-12 -->

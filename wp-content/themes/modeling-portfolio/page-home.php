@@ -21,13 +21,12 @@ get_header(); ?>
 
 			<section class="quote-section">
 				<div class="container">
-
 				<?php 
 					$args = array(
-							'type' => 'post',
-							'category_name'=> 'Home-quote',
-							'posts_per_page' => 1
-						);
+						'type' => 'post',
+						'category_name'=> 'Home-quote',
+						'posts_per_page' => 1
+					);
 
 					$blogLoop = new WP_Query($args);
 
@@ -39,7 +38,6 @@ get_header(); ?>
 							//get_post_format() - retrieve the_post_format of the current post that is in the post loop.
 
 						endwhile;
-
 					endif;
 
 					wp_reset_postdata(); //ensures that the global $post has been restored to the current post in the main query. (USE immediately after every custom WP_Query()).
@@ -55,7 +53,6 @@ get_header(); ?>
 					<div class="row">
 
 					<?php 
-
 						$args = array( 
 							'type' => 'post',
 							'posts_per_page' => 9,
@@ -71,7 +68,6 @@ get_header(); ?>
 							while( $blogLoop->have_posts() ): $blogLoop->the_post(); ?>
 
 							<?php 
-
 								if($i==0): $column = 12; 
 									elseif($i > 0 && $i < 2): $column = 6;
 									elseif($i > 1 && $i < 3): $column = 6;
@@ -83,7 +79,6 @@ get_header(); ?>
 									elseif($i > 5 && $i < 7): $column = 12;
 									elseif($i > 6): $column = 6;
 								endif;
-
 							?>
 
 								<div class="col-lg-4 col-md-<?php echo $column; ?> col-sm-12 gallery-item">
@@ -120,8 +115,6 @@ get_header(); ?>
 						endif;
 
 						wp_reset_postdata(); //ensures that the global $post has been restored to the current post in the main query. (USE immediately after every custom WP_Query()).
-
-						//wp_reset_query() - ensure that the main query has been reset to the original main query. (USE wp_reset_query() - immediately after every loop using query_posts()).
 					?>
 
 					</div><!-- .row -->
@@ -149,8 +142,6 @@ get_header(); ?>
 					endif;
 
 					wp_reset_postdata(); //ensures that the global $post has been restored to the current post in the main query. (USE immediately after every custom WP_Query()).
-
-					//wp_reset_query() - ensure that the main query has been reset to the original main query. (USE wp_reset_query() - immediately after every loop using query_posts()).
 				?>
 
 				<?php 
@@ -173,10 +164,7 @@ get_header(); ?>
 					endif;
 
 					wp_reset_postdata(); //ensures that the global $post has been restored to the current post in the main query. (USE immediately after every custom WP_Query()).
-
-					//wp_reset_query() - ensure that the main query has been reset to the original main query. (USE wp_reset_query() - immediately after every loop using query_posts()).
 				?>
-
 			</section><!-- .about-section -->
 
 		</main>

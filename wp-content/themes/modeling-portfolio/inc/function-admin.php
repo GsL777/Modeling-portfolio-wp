@@ -15,7 +15,7 @@ function portfolio_add_admin_page(){
 	//Generate Modeling Portfolio Admin Sub Pages
 	add_submenu_page( 'fashion_portfolio', 'Modeling Portfolio Sidebar Options', 'Sidebar', 'manage_options', 'fashion_portfolio', 'modeling_theme_create_page' ); //As a first parameter there is a must to use parent_slug the same as add_menu_page Fourth parameter - gytis_portfolio. Second parameter - has to be the same as add_menu_page first parameter. Fifth parameter has to be as fourth parameter in add_menu_page to SHOW SETTINGS AS A FIRST SUBMENU IN A DASHBOARD.
 
-	//Custom theme Sopport Options
+	//Custom theme Support Options
 	add_submenu_page('fashion_portfolio', 'Modeling Theme Options', 'Theme Options', 'manage_options', 'fashion_portfolio_theme', 'portfolio_theme_support_page');
 
 	//Modeling Contact Form Options
@@ -23,14 +23,14 @@ function portfolio_add_admin_page(){
 
 	//Modeling Portfolio CSS Options
 	add_submenu_page('fashion_portfolio', 'Modeling Portfolio CSS Options', 'Custom CSS', 'manage_options', 'fashion_portfolio_css', 'portfolio_theme_settings_page');
+
+
 }
 
-
-add_action('admin_menu', 'portfolio_add_admin_page');//Activate this function. First value - when to trigger this function (in this case during the generation of admin_menu). Second value - the name of the function that must be triggered.
-
-//Activate custom settings
-add_action( 'admin_init', 'modeling_custom_settings' );
-
+	add_action('admin_menu', 'portfolio_add_admin_page');//Activate this function. First value - when to trigger this function (in this case during the generation of admin_menu). Second value - the name of the function that must be triggered.
+	
+	//Activate custom settings
+	add_action( 'admin_init', 'modeling_custom_settings' );//adding into portfolio_add_admin_page, because of the safety precautions.
 
 //Activate custom settings
 function modeling_custom_settings(){
@@ -102,14 +102,15 @@ function modeling_sanitize_custom_css( $input ){ //modeling_sanitize_custom_css 
 //Modeling Portfolio CSS Info END
 
 
-//Modeling Theme Options START
-function modeling_contact_section(){
-	echo 'Activate and Deactivate the Built-in Contact Form';
-}
 
-//Contact Form 
+//Modeling Theme Options
 function modeling_theme_options(){
 	echo 'Activate and Deactivate specific Theme Support Options';
+}
+
+//Contact Form START
+function modeling_contact_section(){
+	echo 'Activate and Deactivate the Built-in Contact Form';
 }
 
 //Custom Contact Form

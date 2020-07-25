@@ -17,6 +17,7 @@
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); //pingback_url - for page to scale up on search engine result page (SERP)?>">
 	<?php endif; ?>
 	<?php wp_head(); ?>
+</head>	
 	<?php  
 		//ON WORDPRESS DASHBOARD -> PORTFOLIO -> CUSTOM CSS a custom css code could be written and prints in the front-end. Written css in ACE applying in frontend style.
 		$custom_ace_css = esc_attr(get_option( 'modeling_css' ));//modeling_css - unique handler from function-admin.php //Custom CSS Options
@@ -24,7 +25,7 @@
 			echo '<style>' . $custom_ace_css . '</style>';
 		endif;
 	?>
-</head>
+
 
 	<body <?php body_class(); //body_class(); - WP prints automatically to what style is used?>>
 
@@ -41,7 +42,6 @@
 		</button>
 
 		<div class="collapse navigation-bar navbar-collapse" id="navbarNav">
-
 			<?php //theme-support.php function modeling_register_nav_menu
 				wp_nav_menu(
 					array(
@@ -52,34 +52,19 @@
                 	)
 				);
 			?>
-
 		</div><!-- .collapse -->
 	</nav><!-- .nav-section -->
 
 
 	<header class="header-section">
 		<div class="social-media">
-
-		<?php 
-			$facebook = 'https://www.facebook.com/login/';
-			$twitter = 'https://twitter.com/login?lang=en-gb';
-			$linkedin = 'https://www.linkedin.com/login?trk=guest_homepage-basic_nav-header-signin';
-		?>
-
-			<a target="_blank" href="<?php echo $facebook; ?>" rel="nofollow" class="facebook"><i class="fa fa-facebook"></i></a>
-			<a target="_blank" href="<?php echo $twitter; ?>" rel="nofollow" class="twitter"><i class="fa fa-twitter"></i></a>
-			<a target="_blank" href="<?php echo $linkedin; ?>" rel="nofollow" class="linkedin"><i class="fa fa-linkedin"></i></a>
-
+			<?php echo social_btn();//function in theme-support.php ?><!-- .socials -->
 		</div><!-- .social-media -->
 
-
 		<div class="header-slider">
-
-			<div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
+			<div id="carouselFade-<?php the_ID(); ?>" class="carousel slide carousel-fade" data-ride="carousel">
 				<div class="carousel-inner">
-
 				<?php 
-
 					$args_cat = array(
 						'include' => '5'
 					);
@@ -108,14 +93,13 @@
 									<div class="header-content table">
 										<div class="table-cell">
 											<h1 class="site-title">
-												<span class="hide"><?php the_title(); /* SET AS DYNAMIC PAGE TITLE */?><!-- Home -->
-												<?php //echo get_the_title(111); ?>
-												<?php //the_title( sprintf(esc_url(get_permalink() ) ) ); ?>
+												<span class="hide"><?php the_title(); // SET AS DYNAMIC PAGE TITLE?><!-- Home -->
+												<?php //echo get_the_title(111); 
+												 //the_title( sprintf(esc_url(get_permalink() ) ) ); ?>
 												</span>
 											</h1>
 										</div><!-- table-cell -->
 									</div><!-- header-content -->
-
 								</div><!-- .carousel-item -->
 
 							<?php  
@@ -129,12 +113,12 @@
 				</div><!-- .carousel-inner -->
 
 
-				<a class="previous" href="#carouselFade" role="button" data-slide="prev">
+				<a class="previous" href="#carouselFade-<?php the_ID(); ?>" role="button" data-slide="prev">
 					<span class="control-prev-icon" aria-hidden="true"><i class="arrow left"></i></span>
 					<span class="sr-only">Previous</span>
 				</a><!-- .carousel-control-prev -->
 
-				<a class="next" href="#carouselFade" role="button" data-slide="next">
+				<a class="next" href="#carouselFade-<?php the_ID(); ?>" role="button" data-slide="next">
 					<span class="control-next-icon" aria-hidden="true"><i class="arrow right"></i></span>
 					<span class="sr-only">Next</span>
 				</a><!-- .carousel-control-next -->

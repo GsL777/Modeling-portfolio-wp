@@ -66,8 +66,7 @@ get_header(); ?>
 
 							$i = 0; //variable for $fontIcon
 							while( $blogLoop->have_posts() ): $blogLoop->the_post();
-
-							?>
+					?>
 
 							<?php 
 								// global $fontIcon;   -  use global if the content putted in template part but better to avoid it.

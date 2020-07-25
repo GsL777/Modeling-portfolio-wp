@@ -71,6 +71,7 @@ jQuery(document).ready(function($){
     });
     /* portfolio.html image gallery popup END */
 
+
     /* portfolio.html image gallery popup START */
     $(document).ready(function () {
         $("img").click(function(){
@@ -82,7 +83,6 @@ jQuery(document).ready(function($){
     });
     /* portfolio.html image gallery popup END */
     
-
 
     /*Contact form submission START*/ //contact-form.php
     //FILES INCLUDE shortcodes.php, function.php(to add ajax.php), contact-form.php, ajax.php, theme-support.php, custom-post-type.php, contact.scss
@@ -103,7 +103,7 @@ jQuery(document).ready(function($){
             if( name === '' ){
                 //console.log('Required inputs are empty');
                 $('#name').parent('.form-group').addClass('has-error');//#name - id in contact-form.php
-                
+
                 return;//return stops the execution of the script at this point. 
                 //It is not going to go on the second line and not going to continue if this if statement is true.
             }
@@ -116,7 +116,7 @@ jQuery(document).ready(function($){
 
             if( message === '' ){
                 $('#message').parent('.form-group').addClass('has-error');//#message - id in contact-form.php
-                
+
                 return;
             }
 
@@ -132,11 +132,11 @@ jQuery(document).ready(function($){
             //$_POST (post method) - is a method that passes all the variables hidden inside the reload of the page. These methods are not getting printed anywhere.
             //$_GET (get method) - print the variables inside the url so you will see the variables inside the url. GET method is not safe
             data : { // data contains all the custom data like the array and we can write in the curly brackets and send to the ajax function
- 
+
                 name : name,
                 email : email,
                 message : message,
-                action: 'modeling_save_user_contact_form' //function portfolio_save_contact in ajax.php 
+                action: 'modeling_save_user_contact_form' //function modeling_save_contact in ajax.php 
 
             },
             error : function( response ){

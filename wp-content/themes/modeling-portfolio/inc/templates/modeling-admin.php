@@ -25,7 +25,7 @@
 	</div>
 </div>
 
-<form method="post" action="options.php" class="modeling-general-form"> <!-- options.php the same as in Dashboard -> General Settings -> right click on Site Title-> inspect (in form written) -->
+<form method="post" action="options.php" class="modeling-general-form"><!-- options.php the same as in Dashboard -> General Settings -> right click on Site Title-> inspect (in form written) -->
 	<?php settings_fields( 'modeling-settings-group' ); //put modeling-settings-group from function-admin.php modeling_custom_settings?>
 	
 	<?php do_settings_sections( 'fashion_portfolio' ); //have to specify the the section where the name belongs. fashion_portfolio taken from function-admin function modeling_custom_settings add_settings_section FOURTH PARAMETER?>

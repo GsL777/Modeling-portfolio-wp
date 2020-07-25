@@ -5,7 +5,7 @@
 	@package modeling-portfolio-theme
 
 	===================================
-		PAGE ABOUT 
+		PAGE CONTACT
 	===================================
 
 */

@@ -27,6 +27,8 @@ get_header(); ?>
 					
 			?>
 
+			<?php wp_reset_postdata(); ?>
+
 			<?php 
 			//Wordpress 101 22lesson to exclude header posts and to print gallery with different bootstrap classes!!!
 
